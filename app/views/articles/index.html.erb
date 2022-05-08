@@ -1,0 +1,27 @@
+<p align="center">
+<style>
+ body {
+  background-color: #a0a0a0
+ }
+</style>
+<span style="font-family: cursive">
+<font color="#00ffff", size=20>
+Записки
+</font>
+</span>
+</p>
+
+
+<ul>
+  <% @articles.each do |article| %>
+   <% unless article.archived? %>
+    <li>
+     <%= link_to article.title, article%> 
+    </li>
+   <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "New Article", new_article_path %>
+
